@@ -1,6 +1,6 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Box } from "@mui/material";
-import CardContent from "@mui/material/CardContent";
+import { Box, Button, CardContent } from "@mui/material";
+
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
@@ -72,7 +72,9 @@ function FoodById() {
                 left: "10%",
                 transform: "translateX(-50%)",
                 zIndex: "1",
-                fontSize: "40px",
+                fontSize: "50px",
+                color: "#fff",
+                fontWeight: "600",
               }}
             >
               {recipe.strMeal}
@@ -81,12 +83,24 @@ function FoodById() {
               style={{
                 position: "absolute",
                 top: "77%",
-                left: "18%",
-                width: "25%",
+                left: "24%",
+                gap: "10px",
+                width: "40%",
                 transform: "translate(-50%, -50%)",
                 display: "flex",
               }}
             >
+              <button
+                style={{
+                  width: "20%",
+                  height: "5vh",
+                  borderRadius: "40px",
+                  border: "none",
+                  backgroundColor: "#f5f5dc",
+                }}
+              >
+                4.6
+              </button>
               <button
                 style={{
                   width: "70%",
@@ -109,11 +123,45 @@ function FoodById() {
                   backgroundColor: "#f5f5dc",
                 }}
               >
-                Yetkazish Vaqti 60-70 min
+                Yetkazish Vaqti . 60-70 min
+              </button>
+              <button
+                style={{
+                  width: "20%",
+                  height: "5vh",
+                  borderRadius: "40px",
+                  border: "none",
+                  backgroundColor: "#f5f5dc",
+                }}
+              >
+                I
+              </button>
+              <button
+                style={{
+                  width: "20%",
+                  height: "5vh",
+                  borderRadius: "40px",
+                  border: "none",
+                  backgroundColor: "#f5f5dc",
+                }}
+              >
+                I
               </button>
             </div>
           </div>
 
+          <input
+            style={{
+              width: "65%",
+              height: "6vh",
+              borderRadius: "10px",
+              color: "gray",
+              marginTop: "2%",
+              borderColor: "gray",
+            }}
+            type="search"
+            placeholder="Muassasa bo'yicha qidirish"
+          />
           <div style={{ display: "flex", gap: "10px", marginTop: "2%" }}>
             <button
               style={{ width: "8%", height: "5vh", borderRadius: "10px", border: "none", backgroundColor: "#f5f5dc" }}
@@ -158,33 +206,42 @@ function FoodById() {
               Pizza
             </button>
           </div>
-          <input
-            style={{ width: "65%", height: "5vh", borderRadius: "10px", color: "gary", marginTop: "2%" }}
-            type="search"
-            placeholder="Muassasa bo'yicha qidirish"
-          />
+
           {/* <p style={{ width: "65%", marginTop: "10px", maxWidth: "md" }}>{recipe.strInstructions}</p> */}
 
           <Grid container spacing={1} maxWidth={"md"}>
-            {/* Grid for cards */}
-            {Array.from({ length: 16 }).map((_, index) => (
+            {Array.from({ length: 24 }).map((_, index) => (
               <Grid item xs={6} sm={4} md={3} key={index}>
                 <Box
                   width={219}
-                  height={"240px"}
-                  bgcolor={"#fff"}
-                  borderRadius={"20px 20px 20px 20px"}
+                  height={"280px"}
+                  bgcolor={"#F5F5F5"}
+                  borderRadius={"20px"}
                   boxShadow={4}
                   overflow="hidden"
                   marginTop={2}
                 >
-                  <CardContent>
+                  <CardContent style={{ flex: 1 }}>
                     <img
-                      style={{ width: "100%", height: "20vh", objectFit: "cover" }}
-                      src={`https://source.unsplash.com/random/800x600?sig=${index + 1}`} // Fetch a random image from Unsplash
-                      alt={`Image ${index + 1}`}
+                      style={{ width: "100%", height: "20vh", objectFit: "cover", borderRadius: "10px" }}
+                      src={`https://source.unsplash.com/800x600/?food&sig=${index + 1}`} // Fetch a random food image from Unsplash
+                      alt={`Food Image ${index + 1}`}
                     />
-                    <div style={{ padding: "10px", flexDirection: "column", display: "flex" }}></div>
+
+                    <h3 style={{ fontWeight: "400" }}>Card Name {index + 1}</h3>
+                    <div style={{ padding: "10px", marginTop: "10%", textAlign: "center" }}>
+                      <Button
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "#F7E7CE",
+                          borderRadius: "10px",
+                          color: "black",
+                          fontWeight: "400",
+                        }}
+                      >
+                        Click Me
+                      </Button>
+                    </div>
                   </CardContent>
                 </Box>
               </Grid>

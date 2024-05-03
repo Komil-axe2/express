@@ -41,9 +41,6 @@ export default function ButtonAppBar() {
             </Grid>
             <Grid item xs={8}>
               <Box sx={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-                <NavLink to={"/"}>Home</NavLink>
-                <NavLink to={"/about"}>About</NavLink>
-                <NavLink to={"/photos"}>Photos</NavLink>
                 <input
                   style={{
                     width: "35%",
@@ -51,6 +48,7 @@ export default function ButtonAppBar() {
                     borderRadius: "10px",
                     border: "1px solid gray",
                     textAlign: "center",
+                    marginLeft: "5%",
                   }}
                   type="text"
                   placeholder="taom,tovar,oshxona"
@@ -80,6 +78,11 @@ export default function ButtonAppBar() {
                 >
                   Toshkent, Yunusobod
                 </Button>
+                <NavLink to={"/"}>Home</NavLink>
+                <NavLink to={"/about"}>About</NavLink>
+                <NavLink to={"/photos"}>Photos</NavLink>
+                <NavLink to={"/product"}>Products</NavLink>
+                <NavLink to={"/album"}>Album</NavLink>
               </Box>
             </Grid>
             <Grid item xs={2} />

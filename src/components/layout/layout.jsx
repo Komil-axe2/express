@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import ButtonAppBar from "./Header";
 
@@ -6,7 +7,7 @@ const Layout = (props) => {
   return (
     <div>
       <ButtonAppBar />
-      {children}
+      <Box sx={{ marginTop: "2%" }}>{children}</Box>
     </div>
   );
 };
